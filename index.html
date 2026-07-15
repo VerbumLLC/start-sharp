@@ -49,6 +49,11 @@
   .nav-cta{font-family:'Archivo',sans-serif;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;
     background:var(--ink);color:var(--cream);padding:11px 20px;border-radius:2px;text-decoration:none;transition:.2s}
   .nav-cta:hover{background:var(--gold-deep)}
+  .nav-actions{display:flex;align-items:center;gap:10px}
+  .nav-ghost{font-family:'Archivo',sans-serif;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;
+    background:transparent;color:var(--ink);border:2px solid var(--ink);padding:9px 18px;border-radius:2px;text-decoration:none;transition:.2s}
+  .nav-ghost:hover{background:var(--ink);color:var(--cream)}
+  @media(max-width:520px){.nav-ghost,.nav-cta{font-size:11px;padding:8px 12px}.nav-actions{gap:7px}}
 
   /* ---------- Hero ---------- */
   .hero{padding:86px 0 72px;position:relative;overflow:hidden}
@@ -211,8 +216,9 @@
     <h1><span class="thin">New business.</span> Official launch. Stronger&nbsp;start.</h1>
     <p class="lede">Branding, launch copy, QR codes, and coded launch-ready sites for new vendors, makers, and service providers — built during a scheduled Launch Slot, then handed to you to own.</p>
     <div class="hero-actions">
-      <a href="#pricing" class="btn btn-primary">See Launch Kits</a>
+      <a href="#pricing" class="btn btn-ghost">See Launch Kits</a>
       <a href="#custom" class="btn btn-ghost">Build a Custom Site</a>
+      <a href="meet-phoebe-demo.html" class="btn btn-ghost">Meet Phoebe</a>
     </div>
   </div>
 </section>
