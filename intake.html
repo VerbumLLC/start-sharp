@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Intake · Start Sharp™</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FEF8ED;--cream-deep:#F6EEDC;--ink:#171310;--ink-soft:#4a423a;
+    --gold:#D5AE55;--gold-deep:#A8772A;--line:#E4D8BE;--white:#fffdf8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--cream);color:var(--ink);font-family:'Inter',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;padding:40px 20px}
+  .wrap{max-width:620px;margin:0 auto}
+  .topline{text-align:center;margin-bottom:30px}
+  .wordmark{font-family:'Archivo',sans-serif;display:inline-flex;align-items:baseline;gap:.14em;letter-spacing:.02em;line-height:1;font-size:26px}
+  .wordmark .start{font-weight:400}.wordmark .sharp{font-weight:900}.wordmark .tm{font-size:.34em;font-weight:600;transform:translateY(-1.1em);margin-left:.05em}
+  .paid{display:inline-flex;align-items:center;gap:8px;background:var(--cream-deep);border:1px solid var(--line);border-radius:999px;padding:8px 18px;font-size:13px;font-weight:600;color:var(--gold-deep);margin-top:16px}
+  .card{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:38px 34px;box-shadow:0 20px 50px -34px rgba(0,0,0,.3)}
+  .eyebrow{font-family:'Archivo',sans-serif;font-weight:700;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--gold-deep);margin-bottom:12px}
+  h1{font-family:'Archivo',sans-serif;font-weight:900;font-size:30px;letter-spacing:-.01em;line-height:1.05;margin-bottom:10px}
+  .lede{color:var(--ink-soft);font-size:15px;margin-bottom:28px}
+  label{display:block;font-family:'Archivo',sans-serif;font-size:12px;letter-spacing:.05em;text-transform:uppercase;font-weight:700;margin:20px 0 7px}
+  .req{color:var(--gold-deep)}
+  input,select,textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:7px;font:inherit;font-size:15px;background:var(--cream);color:var(--ink)}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold-deep)}
+  textarea{resize:vertical;min-height:90px}
+  .hint{font-size:12.5px;color:var(--ink-soft);margin-top:5px}
+  .send{width:100%;margin-top:30px;padding:16px;background:var(--ink);color:var(--cream);border:none;border-radius:7px;font-family:'Archivo',sans-serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;cursor:pointer;transition:.2s}
+  .send:hover{background:var(--gold-deep)}
+  .foot{text-align:center;font-size:12.5px;color:var(--ink-soft);margin-top:22px}
+  .foot b{color:var(--ink)}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topline">
+      <span class="wordmark"><span class="start">START</span><span class="sharp">SHARP</span><span class="tm">™</span></span>
+      <div class="paid">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8772A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        Payment received — one last step
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="eyebrow">Project Intake</div>
+      <h1>Tell us about your launch.</h1>
+      <p class="lede">Thanks for reserving your Launch Slot! Fill this out so we can start building. The more detail you give, the sharper your finished work will be.</p>
+
+      <label>Your name <span class="req">*</span></label>
+      <input id="name" type="text" placeholder="First and last">
+
+      <label>Email <span class="req">*</span></label>
+      <input id="email" type="email" placeholder="you@email.com">
+      <p class="hint">Use the same email as your payment if you can — helps us match your order.</p>
+
+      <label>Phone (optional)</label>
+      <input id="phone" type="tel" placeholder="(   )   -    ">
+
+      <label>Which package did you reserve? <span class="req">*</span></label>
+      <select id="package">
+        <option value="">Choose one…</option>
+        <option>Starter Pack — $147</option>
+        <option>Starter Pack Plus — $297</option>
+        <option>Launch Kit Pro — $497</option>
+      </select>
+
+      <label>Business or project name <span class="req">*</span></label>
+      <input id="biz" type="text" placeholder="What are we launching?">
+
+      <label>What does your business do? <span class="req">*</span></label>
+      <textarea id="what" placeholder="A sentence or two — what you sell or offer, and who it's for."></textarea>
+
+      <label>Do you have a name/tagline yet, or need one?</label>
+      <textarea id="brand" placeholder="Existing name and any tagline ideas, OR tell us you'd like us to create one."></textarea>
+
+      <label>Colors, vibe, or examples you like (optional)</label>
+      <textarea id="vibe" placeholder="Any colors, styles, or brands/sites whose look you admire. Links welcome."></textarea>
+
+      <label>Anything else we should know?</label>
+      <textarea id="notes" placeholder="Deadlines, must-haves, questions — anything at all."></textarea>
+
+      <button class="send" id="send">Submit intake →</button>
+      <p class="foot">Questions? Email <b>info@verbumco.com</b></p>
+    </div>
+  </div>
+
+<script>
+  function val(id){return (document.getElementById(id).value||'').trim();}
+  document.getElementById('send').onclick=function(){
+    if(!val('name')||!val('email')||!val('package')||!val('biz')||!val('what')){
+      alert('Please fill in the required fields marked with *');
+      return;
+    }
+    var subject='Start Sharp Intake — '+val('biz')+' ('+val('package')+')';
+    var lines=[
+      'Name: '+val('name'),
+      'Email: '+val('email'),
+      'Phone: '+val('phone'),
+      'Package: '+val('package'),
+      'Business/Project: '+val('biz'),
+      '',
+      'What the business does:',
+      val('what'),
+      '',
+      'Name / tagline status:',
+      val('brand'),
+      '',
+      'Colors / vibe / examples:',
+      val('vibe'),
+      '',
+      'Anything else:',
+      val('notes')
+    ];
+    var body=encodeURIComponent(lines.join('\n'));
+    window.location.href='mailto:startsharp@verbumco.com?subject='+encodeURIComponent(subject)+'&body='+body;
+  };
+</script>
+</body>
+</html>
