@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Request Info · Phoebe · Start Sharp™</title>
+<style>
+  :root{
+    --ink:#0a0a0a;--paper:#f7f5f0;--gold:#c9a24b;--line:#e2ddd2;--muted:#6b675f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:"Helvetica Neue",Arial,sans-serif;background:var(--paper);color:var(--ink);
+    -webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;padding:32px 20px;
+  }
+  .wrap{width:100%;max-width:460px}
+  .brand{display:flex;align-items:center;gap:12px;justify-content:center;margin-bottom:26px}
+  .brand .mark{width:32px;height:32px;background:var(--ink);display:flex;align-items:center;justify-content:center}
+  .brand .mark span{color:#fff;font-size:7px;letter-spacing:1.5px;font-weight:700}
+  .brand h1{font-size:13px;letter-spacing:4px;font-weight:600;text-transform:uppercase}
+  .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:32px 28px;
+    box-shadow:0 24px 60px -34px rgba(0,0,0,.35)}
+  .eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:12px}
+  h2{font-size:26px;font-weight:300;letter-spacing:-.4px;margin-bottom:8px}
+  h2 b{font-weight:700}
+  .sub{color:var(--muted);font-size:14px;line-height:1.5;margin-bottom:24px}
+  label{display:block;font-size:12px;letter-spacing:.5px;text-transform:uppercase;font-weight:700;margin:16px 0 6px;color:var(--ink)}
+  input,select,textarea{
+    width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:10px;font:inherit;font-size:14px;
+    background:#fbfaf6;color:var(--ink);
+  }
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--ink)}
+  textarea{resize:vertical;min-height:80px}
+  .send{
+    width:100%;margin-top:24px;padding:14px;background:var(--ink);color:#fff;border:none;border-radius:10px;
+    font:inherit;font-size:13px;letter-spacing:2px;text-transform:uppercase;font-weight:700;cursor:pointer;
+    transition:opacity .15s;
+  }
+  .send:hover{opacity:.85}
+  .foot{text-align:center;font-size:12px;color:var(--muted);margin-top:20px}
+  .foot b{color:var(--ink)}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand">
+      <div class="mark"><span>PHOEBE</span></div>
+      <h1>Phoebe</h1>
+    </div>
+    <div class="card">
+      <div class="eyebrow">Request info</div>
+      <h2>Want <b>Phoebe</b> on your site?</h2>
+      <p class="sub">Tell us a little about you and we'll reach out with pricing, setup, and next steps. No pressure &mdash; just answers.</p>
+
+      <label for="name">Your name</label>
+      <input id="name" type="text" placeholder="First and last">
+
+      <label for="email">Email</label>
+      <input id="email" type="email" placeholder="you@email.com">
+
+      <label for="org">Business or church name</label>
+      <input id="org" type="text" placeholder="Where would Phoebe live?">
+
+      <label for="type">What are you?</label>
+      <select id="type">
+        <option value="Business">A business</option>
+        <option value="Church">A church</option>
+        <option value="Other">Something else</option>
+      </select>
+
+      <label for="msg">Anything you'd like us to know? (optional)</label>
+      <textarea id="msg" placeholder="Questions, timing, what you're hoping Phoebe can do..."></textarea>
+
+      <button class="send" id="send">Send my request &rarr;</button>
+    </div>
+    <p class="foot">Built by <b>Start Sharp&trade;</b> &middot; We'll reply from startsharp@verbumco.com</p>
+  </div>
+
+<script>
+  document.getElementById('send').onclick = function(){
+    var name = encodeURIComponent(document.getElementById('name').value || '');
+    var email= encodeURIComponent(document.getElementById('email').value || '');
+    var org  = encodeURIComponent(document.getElementById('org').value || '');
+    var type = encodeURIComponent(document.getElementById('type').value || '');
+    var msg  = encodeURIComponent(document.getElementById('msg').value || '');
+    var subject = 'Phoebe Request Info — ' + decodeURIComponent(type);
+    var body =
+      'Name: ' + decodeURIComponent(name) + '%0D%0A' +
+      'Email: ' + decodeURIComponent(email) + '%0D%0A' +
+      'Business/Church: ' + decodeURIComponent(org) + '%0D%0A' +
+      'Type: ' + decodeURIComponent(type) + '%0D%0A%0D%0A' +
+      'Message:%0D%0A' + decodeURIComponent(msg);
+    window.location.href = 'mailto:startsharp@verbumco.com?subject=' +
+      encodeURIComponent(subject) + '&body=' + body;
+  };
+</script>
+</body>
+</html>
