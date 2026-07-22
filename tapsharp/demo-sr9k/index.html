@@ -182,6 +182,8 @@
 
   .rows{display:flex;flex-direction:column;}
   .prow{display:flex;align-items:center;gap:12px;padding:13px 18px;border-bottom:1px solid var(--line);}
+  .prow.clk{cursor:pointer;transition:background .12s;}
+  .prow.clk:hover{background:var(--surface-2);}
   .prow:last-child{border-bottom:none;}
   .prow .av{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-size:.76rem;font-weight:800;color:#fff;flex:none;font-family:var(--display);}
   .prow .who .nm{font-weight:680;font-size:.92rem;}
@@ -417,7 +419,7 @@
     var top='<div class="card"><div class="ch"><h3>Busiest locations</h3><span class="rt">tap volume</span></div><div class="rows">'+
       locs.slice().sort(function(a,b){return locTaps(b.id)-locTaps(a.id);}).slice(0,5).map(function(l){
         var b=brands.filter(function(x){return x.id===l.brand;})[0];
-        return '<div class="prow"><div class="av" style="background:'+b.color+'">'+b.glyph+'</div>'+
+        return '<div class="prow clk" data-loc="'+l.id+'"><div class="av" style="background:'+b.color+'">'+b.glyph+'</div>'+
           '<div class="who"><div class="nm">'+esc(l.name)+'</div><div class="em">'+esc(l.city)+' · '+esc(l.mgr)+'</div></div>'+
           '<div class="sc" style="min-width:auto">'+spark(dailyTotals([l]),80,22,'var(--brand)')+'</div>'+
           '<div class="taps" style="min-width:64px;text-align:right"><span class="n num" style="font-family:var(--display);font-weight:800">'+locTaps(l.id)+'</span> <small style="color:var(--ink-faint)">taps</small></div></div>';
@@ -529,12 +531,16 @@
     var r=roleObj();
     if(state.view==='team'&&!r.team) state.view='overview';
     if(state.view==='billing'&&!r.billing) state.view='overview';
+    // A single-store role (location manager / staff) lands straight on
+    // their store's chips — no hunting for where the tags are.
+    var vl=visibleLocs();
+    if(vl.length===1){ state.view='locations'; state.loc=vl[0].id; }
     render();
   });
   document.querySelector('.app').addEventListener('click', function(e){
     var t=e.target.closest('[data-nav],[data-loc],[data-repoint],[data-save],[data-cancel],[data-toggle],[data-action]');
     if(!t) return;
-    if(t.dataset.nav!==undefined && t.hasAttribute('data-nav')){ if(t.disabled) return; state.view=t.dataset.nav; state.loc=null; state.editing=null; render(); return; }
+    if(t.dataset.nav!==undefined && t.hasAttribute('data-nav')){ if(t.disabled) return; state.view=t.dataset.nav; state.editing=null; var vl=visibleLocs(); state.loc=(t.dataset.nav==='locations'&&vl.length===1)?vl[0].id:null; render(); return; }
     if(t.dataset.loc){ state.loc=t.dataset.loc; state.editing=null; render(); return; }
     if(t.dataset.repoint){ state.editing=t.dataset.repoint; render(); setTimeout(function(){var i=$('#edit-input'); if(i){i.focus();i.select();}},20); return; }
     if(t.dataset.cancel){ state.editing=null; render(); return; }
