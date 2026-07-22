@@ -33,8 +33,8 @@ src="https://www.facebook.com/tr?id=1333983018923267&ev=PageView&noscript=1"/></
     --cream-deep:#F6EEDC;
     --ink:#171310;
     --ink-soft:#4a423a;
-    --gold:#D5AE55;        /* bright brand gold — accents/arrow only */
-    --gold-deep:#A8772A;   /* darker gold — buttons & small text (accessible) */
+    --gold:#D5AE55;
+    --gold-deep:#A8772A;
     --line:#E4D8BE;
     --white:#fffdf8;
   }
@@ -48,152 +48,81 @@ src="https://www.facebook.com/tr?id=1333983018923267&ev=PageView&noscript=1"/></
     -webkit-font-smoothing:antialiased;
   }
   .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+  img{max-width:100%;display:block}
 
   /* ---------- Wordmark ---------- */
   .wordmark{font-family:'Archivo',sans-serif;display:inline-flex;align-items:baseline;gap:.18em;letter-spacing:.02em;line-height:1}
   .wordmark .start{font-weight:400}
   .wordmark .sharp{font-weight:900}
   .wordmark .tm{font-size:.34em;font-weight:600;transform:translateY(-1.1em);margin-left:.05em}
-  .arrow{display:inline-block;vertical-align:middle}
 
   /* ---------- Nav ---------- */
   header.nav{position:sticky;top:0;z-index:50;background:rgba(254,248,237,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
-  .nav .wordmark{font-size:24px}
   .nav-logo{display:inline-flex;align-items:center}
   .nav-logo img{height:38px;width:auto;display:block}
   .nav-cta{font-family:'Archivo',sans-serif;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;
     background:var(--ink);color:var(--cream);padding:11px 20px;border-radius:2px;text-decoration:none;transition:.2s}
   .nav-cta:hover{background:var(--gold-deep)}
-  .nav-actions{display:flex;align-items:center;gap:10px}
-  .nav-ghost{font-family:'Archivo',sans-serif;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;
-    background:transparent;color:var(--ink);border:2px solid var(--ink);padding:9px 18px;border-radius:2px;text-decoration:none;transition:.2s}
-  .nav-ghost:hover{background:var(--ink);color:var(--cream)}
-  @media(max-width:520px){.nav-ghost,.nav-cta{font-size:11px;padding:8px 12px}.nav-actions{gap:7px}}
 
   /* ---------- Hero ---------- */
-  .hero{padding:86px 0 72px;position:relative;overflow:hidden}
+  .hero{padding:78px 0 68px;position:relative;overflow:hidden;text-align:center}
   .hero .eyebrow{font-family:'Archivo',sans-serif;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
-    font-size:12px;color:var(--gold-deep);margin-bottom:26px}
-  .hero h1{font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(40px,7vw,76px);line-height:.98;letter-spacing:-.01em;max-width:14ch}
+    font-size:12px;color:var(--gold-deep);margin-bottom:22px}
+  .hero h1{font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(40px,7vw,72px);line-height:.98;letter-spacing:-.01em;max-width:14ch;margin:0 auto}
   .hero h1 .thin{font-weight:400}
-  .hero .sub{font-size:clamp(18px,2.4vw,23px);color:var(--ink-soft);max-width:46ch;margin:26px 0 12px;font-weight:500}
-  .hero .lede{font-size:16px;color:var(--ink-soft);max-width:50ch;margin-bottom:36px}
-  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .hero .lede{font-size:16px;color:var(--ink-soft);max-width:50ch;margin:24px auto 34px}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:center}
   .btn{font-family:'Archivo',sans-serif;font-weight:700;font-size:14px;letter-spacing:.07em;text-transform:uppercase;
     padding:16px 30px;border-radius:3px;text-decoration:none;display:inline-block;transition:.2s;border:2px solid transparent;cursor:pointer}
   .btn-primary{background:var(--ink);color:var(--cream)}
   .btn-primary:hover{background:var(--gold-deep);transform:translateY(-1px)}
   .btn-ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
   .btn-ghost:hover{background:var(--ink);color:var(--cream)}
-
-  /* hero logo image */
-  .hero{text-align:center}
-  .hero-logo{max-width:min(560px,90%);width:100%;height:auto;display:block;margin:0 auto 30px}
-  .hero .eyebrow,.hero h1,.hero .lede{margin-left:auto;margin-right:auto}
-  .hero h1{margin-top:0}
-  .hero-actions{justify-content:center}
-  @media(max-width:860px){.hero-logo{max-width:88%;margin-bottom:22px}}
+  .hero-logo{max-width:min(520px,88%);width:100%;height:auto;display:block;margin:0 auto 28px}
+  @media(max-width:860px){.hero-logo{max-width:86%;margin-bottom:22px}}
 
   /* ---------- Trust row ---------- */
   .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--cream-deep)}
-  .trust-inner{display:flex;justify-content:center;gap:clamp(24px,7vw,90px);flex-wrap:wrap;padding:30px 0}
+  .trust-inner{display:flex;justify-content:center;gap:clamp(24px,7vw,90px);flex-wrap:wrap;padding:28px 0}
   .trust-item{display:flex;align-items:center;gap:14px}
   .trust-item .label{font-family:'Archivo',sans-serif;font-weight:800;letter-spacing:.04em;font-size:15px;text-transform:uppercase}
   .trust-item .label small{display:block;font-weight:500;font-family:'Inter';letter-spacing:.04em;font-size:11px;color:var(--gold-deep);text-transform:uppercase}
   .trust-item svg{flex:0 0 auto}
 
   /* ---------- Section headings ---------- */
-  section{padding:84px 0}
-  .sec-head{text-align:center;max-width:640px;margin:0 auto 56px}
+  section{padding:82px 0}
+  .sec-head{text-align:center;max-width:640px;margin:0 auto 52px}
   .sec-rule{width:54px;height:3px;background:var(--gold);margin:0 auto 22px}
   .sec-head h2{font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(30px,4.6vw,46px);letter-spacing:-.01em;line-height:1.02}
   .sec-head p{color:var(--ink-soft);font-size:17px;margin-top:14px}
 
-  /* ---------- Pricing ---------- */
-  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
-  @media(max-width:920px){.tiers{grid-template-columns:1fr;max-width:460px;margin:0 auto}}
-  .tier{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:34px 28px 28px;display:flex;flex-direction:column;position:relative}
-  .tier.feature{border-color:var(--gold);box-shadow:0 14px 40px -22px rgba(168,119,42,.55)}
-  .tier .badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold-deep);color:var(--cream);
-    font-family:'Archivo',sans-serif;font-weight:800;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:6px 16px;border-radius:2px;white-space:nowrap}
-  .tier h3{font-family:'Archivo',sans-serif;font-weight:800;font-size:21px;letter-spacing:.01em;text-transform:uppercase}
-  .tier .who{color:var(--gold-deep);font-size:13px;font-weight:600;margin-top:4px;min-height:20px}
-  .price{font-family:'Archivo',sans-serif;font-weight:900;font-size:52px;line-height:1;margin:20px 0 4px;letter-spacing:-.02em}
-  .price .pre{font-size:20px;font-weight:600;vertical-align:super;color:var(--ink-soft)}
-  .price .from{display:block;font-family:'Inter';font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:2px}
-  .tier .pdiv{height:2px;background:var(--gold);width:42px;margin:16px 0 20px}
-  .tier ul{list-style:none;flex:1 0 auto;margin-bottom:24px}
-  .tier li{display:flex;gap:11px;align-items:flex-start;font-size:14.5px;color:var(--ink-soft);padding:6px 0}
-  .tier li svg{flex:0 0 auto;margin-top:3px}
-  .tier .btn{width:100%;text-align:center}
-  .tier-custom{margin-top:22px;background:var(--ink);color:var(--cream);border:none;display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center;padding:40px 38px;border-radius:6px}
-  @media(max-width:760px){.tier-custom{grid-template-columns:1fr;text-align:center}}
-  .tier-custom h3{color:var(--cream);font-size:24px}
-  .tier-custom .who{color:var(--gold)}
-  .tier-custom ul li{color:#e9dcc4;font-size:14.5px;line-height:1.5}
-  .tier-custom ul li svg{margin-top:4px}
-  .tier-custom .price{color:var(--white)}
-  .tier-custom .price .from{color:var(--gold)}
-  .tier-custom .btn-primary{background:var(--gold-deep)}
-  .tier-custom .btn-primary:hover{background:var(--gold)}
-  .tier-custom .right{display:flex;flex-direction:column;align-items:flex-end;justify-content:center}
-  @media(max-width:760px){.tier-custom .right{align-items:center}}
-
-  /* ---------- Reserve banner ---------- */
-  .reserve{background:var(--cream-deep);border:1px solid var(--line);border-radius:6px;padding:34px 38px;display:flex;align-items:center;gap:26px;margin-top:30px;flex-wrap:wrap;justify-content:center;text-align:center}
-  .reserve svg{flex:0 0 auto}
-  .reserve .rtext h4{font-family:'Archivo',sans-serif;font-weight:800;font-size:22px;text-transform:uppercase;letter-spacing:.04em}
-  .reserve .rtext p{color:var(--ink-soft);font-size:15px}
-
-  /* ---------- FAQ ---------- */
-  .faq{background:var(--cream-deep);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .faq-list{max-width:760px;margin:0 auto}
-  details{border-bottom:1px solid var(--line);padding:4px 0}
-  summary{font-family:'Archivo',sans-serif;font-weight:700;font-size:17.5px;padding:20px 4px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
-  summary::-webkit-details-marker{display:none}
-  summary .plus{flex:0 0 auto;width:22px;height:22px;position:relative;transition:.25s}
-  summary .plus::before,summary .plus::after{content:'';position:absolute;background:var(--gold-deep);border-radius:2px}
-  summary .plus::before{top:10px;left:2px;width:18px;height:2px}
-  summary .plus::after{left:10px;top:2px;width:2px;height:18px;transition:.25s}
-  details[open] summary .plus::after{transform:rotate(90deg);opacity:0}
-  details[open] summary .plus{transform:rotate(180deg)}
-  .faq-a{padding:0 4px 22px;color:var(--ink-soft);font-size:15.5px;max-width:64ch}
-
-  /* ---------- Phoebe ---------- */
-  .phoebe{background:var(--ink);color:var(--cream)}
-  .phoebe .sec-head{max-width:720px;margin-bottom:48px}
-  .phoebe .sec-head h2{color:var(--cream)}
-  .phoebe .sec-head p{color:#c9bda6}
-  .ph-eyebrow{font-family:'Archivo',sans-serif;font-weight:700;letter-spacing:.22em;text-transform:uppercase;font-size:12px;color:var(--gold);margin-bottom:20px}
-  .ph-mark{font-family:'Archivo',sans-serif;font-weight:400;font-size:clamp(34px,5vw,54px);letter-spacing:.32em;padding-left:.32em;color:var(--white);line-height:1;margin-bottom:22px}
-  .ph-mark span{color:var(--gold)}
-  .ph-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:30px}
-  @media(max-width:920px){.ph-steps{grid-template-columns:1fr 1fr}}
-  @media(max-width:560px){.ph-steps{grid-template-columns:1fr}}
-  .ph-step{background:#221c16;border:1px solid #3a322a;border-radius:6px;padding:24px 22px}
-  .ph-step .num{font-family:'Archivo',sans-serif;font-weight:900;color:var(--gold);font-size:13px;letter-spacing:.14em;display:block;margin-bottom:8px}
-  .ph-step h4{font-family:'Archivo',sans-serif;font-weight:800;font-size:17px;text-transform:uppercase;letter-spacing:.05em;color:var(--cream);margin-bottom:8px}
-  .ph-step p{color:#c9bda6;font-size:14px;line-height:1.55}
-  .ph-guard{border:1px solid var(--gold-deep);border-radius:6px;padding:26px 30px;max-width:760px;margin:0 auto 36px;text-align:center}
-  .ph-guard h4{font-family:'Archivo',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:16px;color:var(--gold);margin-bottom:8px}
-  .ph-guard p{color:#e9dcc4;font-size:15px;max-width:60ch;margin:0 auto}
-  .ph-cta{text-align:center}
-  .ph-cta .ph-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-  .phoebe .btn-ghost:hover{background:var(--cream);color:var(--ink)!important;border-color:var(--cream)}
-  .phoebe .btn-primary{background:var(--gold-deep)}
-  .phoebe .btn-primary:hover{background:var(--gold)}
-  .ph-cta p{margin-top:14px;color:#8c8170;font-size:12.5px;letter-spacing:.02em}
-
-  /* ---------- TapSharp card ---------- */
-  .tapsharp{padding:74px 0;text-align:center}
-  .ts-card{display:inline-block;max-width:480px;width:100%;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 24px 60px -30px rgba(23,19,16,.6);transition:transform .2s,box-shadow .2s}
-  .ts-card img{width:100%;height:auto;display:block}
-  .ts-card:hover{transform:translateY(-5px);box-shadow:0 34px 70px -26px rgba(23,19,16,.7)}
-  .ts-explore{display:inline-flex;align-items:center;gap:9px;margin-top:22px;font-family:'Archivo',sans-serif;font-weight:700;font-size:14px;letter-spacing:.07em;text-transform:uppercase;color:var(--gold-deep);text-decoration:none}
-  .ts-explore:hover{color:var(--ink)}
-  .ts-explore span{transition:transform .18s}
-  .ts-explore:hover span{transform:translateX(4px)}
+  /* ---------- Offerings hub ---------- */
+  .hub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1040px;margin:0 auto}
+  @media(max-width:860px){
+    .hub-grid{grid-template-columns:1fr;max-width:400px}
+    .hub-card{aspect-ratio:auto}
+    .hub-card img{height:auto}
+    .hub-panel{min-height:300px}
+  }
+  .hub-card{position:relative;aspect-ratio:4/5;border-radius:14px;overflow:hidden;border:1px solid var(--line);
+    box-shadow:0 20px 50px -30px rgba(23,19,16,.55);transition:transform .2s,box-shadow .2s;text-decoration:none;display:block}
+  .hub-card:hover{transform:translateY(-6px);box-shadow:0 30px 64px -26px rgba(23,19,16,.7)}
+  .hub-card img{width:100%;height:100%;object-fit:cover;display:block}
+  .hub-panel{width:100%;height:100%;background:linear-gradient(158deg,#241d17 0%,#171310 72%);color:var(--cream);
+    display:flex;flex-direction:column;justify-content:space-between;padding:34px 30px;position:relative;overflow:hidden}
+  .hub-panel .swoosh{position:absolute;top:20px;right:-24px;width:190px;height:143px;opacity:.15;pointer-events:none}
+  .hub-panel .eyebrow{font-family:'Archivo',sans-serif;font-weight:700;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--gold);margin-bottom:14px;position:relative}
+  .hub-panel .mark{font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(28px,3.2vw,34px);line-height:1;color:var(--white);position:relative}
+  .hub-panel .mark span{color:var(--gold)}
+  .hub-panel .hook{color:#d8cbb2;font-size:14.5px;line-height:1.5;margin-top:14px;max-width:24ch;position:relative}
+  .hub-panel .foot{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;position:relative}
+  .hub-panel .price{font-family:'Archivo',sans-serif;font-weight:900;font-size:24px;color:var(--white);line-height:1}
+  .hub-panel .price small{font-size:12px;font-weight:600;color:#d8cbb2;letter-spacing:.02em}
+  .hub-panel .price.soft{font-family:'Inter';font-weight:600;font-size:14px;color:#d8cbb2}
+  .hub-panel .go{display:inline-flex;align-items:center;gap:7px;font-family:'Archivo',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+  .hub-panel .go span{transition:transform .18s}
+  .hub-card:hover .hub-panel .go span{transform:translateX(4px)}
 
   /* ---------- Footer ---------- */
   footer{background:var(--ink);color:var(--cream);padding:54px 0 38px;text-align:center}
@@ -219,9 +148,7 @@ src="https://www.facebook.com/tr?id=1333983018923267&ev=PageView&noscript=1"/></
       <stop offset="1" stop-color="#E6C879"/>
     </linearGradient>
     <symbol id="ssArrow" viewBox="0 0 200 150">
-      <!-- single tapered swoosh: thin at lower-left tail, widening as it rises into the head -->
       <path d="M12 140 C70 134 116 118 150 78 C156 70 161 62 166 53 L181 61 C175 73 168 84 159 94 C124 132 72 146 14 150 Z" fill="url(#goldgrad)"/>
-      <!-- arrowhead, overlapping the ribbon tip so they read as one piece -->
       <path d="M190 28 L160 80 L150 50 Z" fill="url(#goldgrad)"/>
     </symbol>
   </defs>
@@ -230,7 +157,7 @@ src="https://www.facebook.com/tr?id=1333983018923267&ev=PageView&noscript=1"/></
 <header class="nav">
   <div class="wrap nav-inner">
     <a href="#" class="nav-logo"><img src="logo.png" alt="Start Sharp — Look official. Launch faster. Start selling." /></a>
-    <a href="#pricing" class="nav-cta">Reserve a Slot</a>
+    <a href="launch-kits/" class="nav-cta">Reserve a Slot</a>
   </div>
 </header>
 
@@ -240,10 +167,10 @@ src="https://www.facebook.com/tr?id=1333983018923267&ev=PageView&noscript=1"/></
     <img class="hero-logo" src="logo.png" alt="Start Sharp — Look official. Launch faster. Start selling." />
     <p class="eyebrow">Small Business Launch Studio</p>
     <h1><span class="thin">New business.</span> Official launch. Stronger&nbsp;start.</h1>
-    <p class="lede">Branding, launch copy, QR codes, and coded launch-ready sites for new vendors, makers, and service providers — built during a scheduled Launch Slot, then handed to you to own.</p>
+    <p class="lede">Branding, launch copy, QR codes, coded sites, tap-to-connect tags, and an AI front desk — everything a new business needs to look official and start selling.</p>
     <div class="hero-actions">
-      <a href="#pricing" class="btn btn-ghost">See Launch Kits</a>
-      <a href="#custom" class="btn btn-ghost">Build a Custom Site</a>
+      <a href="launch-kits/" class="btn btn-primary">See Launch Kits</a>
+      <a href="tapsharp/" class="btn btn-ghost">Explore TapSharp</a>
       <a href="meet-phoebe-demo.html" class="btn btn-ghost">Meet Phoebe</a>
     </div>
   </div>
@@ -267,190 +194,56 @@ src="https://www.facebook.com/tr?id=1333983018923267&ev=PageView&noscript=1"/></
   </div>
 </div>
 
-<!-- PRICING -->
-<section id="pricing">
+<!-- OFFERINGS HUB -->
+<section>
   <div class="wrap">
     <div class="sec-head">
       <div class="sec-rule"></div>
-      <h2>Choose Your Launch Kit</h2>
-      <p>Scheduled, done-for-you launch packages. Reserve a slot, fill the intake, and we build during your project window.</p>
+      <h2>Everything to launch — in one place</h2>
+      <p>Three ways Start Sharp helps you look official and grow. Tap in to explore.</p>
     </div>
+    <div class="hub-grid">
 
-    <div class="tiers">
-      <!-- Starter -->
-      <div class="tier">
-        <h3>Starter Pack</h3>
-        <p class="who">The essentials to look official</p>
-        <div class="price"><span class="pre">$</span>147</div>
-        <div class="pdiv"></div>
-        <ul>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8772A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Name direction or name polish</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8772A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Tagline</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8772A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Business description</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8772A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Social bio / about section</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8772A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>QR code</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8772A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Starter brand direction</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8772A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>1 round of minor revisions</li>
-        </ul>
-        <a href="https://buy.stripe.com/8x228t6QBaT62gz6Ns7N601" target="_blank" rel="noopener" class="btn btn-ghost">Reserve Starter</a>
-      </div>
+      <!-- Launch Kits -->
+      <a class="hub-card" href="launch-kits/" aria-label="Launch Kits — done-for-you launch packages, from $147">
+        <div class="hub-panel">
+          <svg class="swoosh" viewBox="0 0 200 150"><use href="#ssArrow"/></svg>
+          <div>
+            <div class="eyebrow">Launch Studio</div>
+            <div class="mark">LAUNCH<br>KITS</div>
+            <p class="hook">Done-for-you branding, launch copy, QR codes &amp; coded sites.</p>
+          </div>
+          <div class="foot">
+            <span class="price"><small>from </small>$147</span>
+            <span class="go">Explore <span>&rarr;</span></span>
+          </div>
+        </div>
+      </a>
 
-      <!-- Plus -->
-      <div class="tier feature">
-        <span class="badge">Best Value</span>
-        <h3>Starter Pack Plus</h3>
-        <p class="who">Everything to launch and post</p>
-        <div class="price"><span class="pre">$</span>297</div>
-        <div class="pdiv"></div>
-        <ul>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8772A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Everything in Starter Pack</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8772A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>5 launch posts</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8772A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Offer / menu wording</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8772A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>One-page website copy</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8772A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Launch-ready layout guidance</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8772A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>1 round of minor revisions</li>
-        </ul>
-        <a href="https://buy.stripe.com/9B6bJ31wh9P208r3Bg7N602" target="_blank" rel="noopener" class="btn btn-primary">Reserve Plus</a>
-      </div>
+      <!-- TapSharp (poster) -->
+      <a class="hub-card" href="tapsharp/" aria-label="TapSharp — tap-to-connect NFC tags, plans from $19 per month">
+        <picture>
+          <source srcset="tapsharp-card.webp" type="image/webp">
+          <img src="tapsharp-card.jpg" width="1000" height="1250" loading="lazy" alt="TapSharp by Start Sharp — quarter-sized NFC tags. Tap for reviews, menu, or bookings. Plans from $19/mo." />
+        </picture>
+      </a>
 
-      <!-- Pro -->
-      <div class="tier">
-        <span class="badge" style="background:var(--ink)">Most Complete</span>
-        <h3>Launch Kit Pro</h3>
-        <p class="who">A full launch runway</p>
-        <div class="price"><span class="pre">$</span>497</div>
-        <div class="pdiv"></div>
-        <ul>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8772A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Everything in Starter Pack Plus</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8772A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>30 days of post ideas</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8772A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Written launch-day game plan</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8772A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Priority Launch Slot</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8772A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>2 rounds of minor revisions</li>
-        </ul>
-        <a href="https://buy.stripe.com/eVqdRbfn73qE8EX3Bg7N603" target="_blank" rel="noopener" class="btn btn-ghost">Reserve Pro</a>
-      </div>
-    </div>
+      <!-- Phoebe -->
+      <a class="hub-card" href="meet-phoebe-demo.html" aria-label="Phoebe — your AI front desk, meet her live">
+        <div class="hub-panel">
+          <svg class="swoosh" viewBox="0 0 200 150"><use href="#ssArrow"/></svg>
+          <div>
+            <div class="eyebrow">AI Front Desk</div>
+            <div class="mark">PHOEBE<span>.</span></div>
+            <p class="hook">Answers visitors, captures every lead, and books inside your hours.</p>
+          </div>
+          <div class="foot">
+            <span class="price soft">Meet her live</span>
+            <span class="go">Try demo <span>&rarr;</span></span>
+          </div>
+        </div>
+      </a>
 
-    <!-- CUSTOM CODED SITE -->
-    <div id="custom" class="tier-custom">
-      <div class="left">
-        <h3>Custom Launch Site</h3>
-        <p class="who">Coded for you — and yours to keep</p>
-        <ul style="margin-top:18px">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D5AE55" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Fully coded, mobile-responsive site — no template lock-in</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D5AE55" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Branding + launch copy included</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D5AE55" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Lead form, QR code, and your own domain setup</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D5AE55" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>You own every file — host it anywhere, forever</li>
-        </ul>
-      </div>
-      <div class="right">
-        <div class="price"><span class="from">Starting at</span><span class="pre">$</span>1,200</div>
-        <a href="mailto:startsharp@verbumco.com?subject=Custom%20Launch%20Site%20Inquiry%20(from%20%241%2C200)" class="btn btn-primary" style="margin-top:14px">Start a Site</a>
-        <p style="margin-top:12px;color:var(--gold);font-size:12px;font-weight:500;letter-spacing:.02em;text-align:center;opacity:.85">We scope it, quote you, then book your slot.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- TAPSHARP -->
-<section id="tapsharp" class="tapsharp">
-  <div class="wrap">
-    <a href="tapsharp/" class="ts-card" aria-label="TapSharp — one tap, more business. See TapSharp plans and details.">
-      <picture>
-        <source srcset="tapsharp-card.webp" type="image/webp">
-        <img src="tapsharp-card.jpg" width="1000" height="1250" loading="lazy" alt="TapSharp by Start Sharp — quarter-sized NFC tags. Tap for reviews, menu, or bookings. Plans from $19/mo. StartSharpCo.com/tapsharp" />
-      </picture>
-    </a>
-    <div><a href="tapsharp/" class="ts-explore">Explore TapSharp <span>&rarr;</span></a></div>
-  </div>
-</section>
-
-<!-- PHOEBE -->
-<section id="phoebe" class="phoebe">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="sec-rule"></div>
-      <p class="ph-eyebrow">Start Sharp Presents</p>
-      <div class="ph-mark">PHOEBE<span>.</span></div>
-      <h2>Your AI front desk. Every visitor answered, every lead followed up.</h2>
-      <p>A chat assistant that lives on your website — answering routine questions instantly, capturing every visitor, and booking appointments inside the hours you set. Built for businesses, churches, and any front desk that can't be everywhere at once.</p>
-    </div>
-
-    <div class="ph-steps">
-      <div class="ph-step">
-        <span class="num">01</span>
-        <h4>Answers</h4>
-        <p>Routine questions — hours, services, pricing, "do you do X" — answered instantly, day or night, in your voice.</p>
-      </div>
-      <div class="ph-step">
-        <span class="num">02</span>
-        <h4>Captures</h4>
-        <p>The moment someone engages, Phoebe takes their name and contact. Every capture is saved — nothing lost to voicemail.</p>
-      </div>
-      <div class="ph-step">
-        <span class="num">03</span>
-        <h4>Books</h4>
-        <p>Offers only the availability you've declared. Your office confirms every booking — no double-books, no calendar surprises.</p>
-      </div>
-      <div class="ph-step">
-        <span class="num">04</span>
-        <h4>Follows up</h4>
-        <p>Warm leads get an automatic follow-up sequence, so nobody who was interested quietly slips away.</p>
-      </div>
-    </div>
-
-    <div class="ph-guard">
-      <h4>Built to know her limits</h4>
-      <p>Phoebe works the front desk — she never oversteps it. Anything sensitive, urgent, or past routine is handed to a real person immediately, with warmth and care.</p>
-    </div>
-
-    <div class="ph-cta">
-      <div class="ph-btns">
-        <a href="meet-phoebe-demo.html" class="btn btn-primary">Meet Phoebe</a>
-        <a href="request-info.html" class="btn btn-ghost" style="color:var(--cream);border-color:var(--cream)">Request Info</a>
-      </div>
-      <p>Done-for-you setup · simple monthly fee · every captured lead is yours to keep.</p>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section id="faq" class="faq">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="sec-rule"></div>
-      <h2>Policies &amp; FAQ</h2>
-    </div>
-    <div class="faq-list">
-      <details open>
-        <summary>How does Start Sharp™ work?<span class="plus"></span></summary>
-        <p class="faq-a">Choose your kit, reserve a Launch Slot, complete the intake form, and we build your package during your scheduled project window. You review, we revise, and you receive your finished files.</p>
-      </details>
-      <details>
-        <summary>What is a Launch Slot?<span class="plus"></span></summary>
-        <p class="faq-a">A Launch Slot is your reserved project window. Payment and a completed intake form are required before your slot is confirmed. Custom sites require a 50% deposit to reserve, with the balance due at delivery.</p>
-      </details>
-      <details>
-        <summary>Do I own what you build?<span class="plus"></span></summary>
-        <p class="faq-a">Yes. Everything is built as launch-ready work and handed off to you after final approval. For custom coded sites, you own every file and can host it anywhere. Clients are responsible for their own domain, hosting, subscriptions, and future updates unless ongoing maintenance is purchased separately.</p>
-      </details>
-      <details>
-        <summary>What if I need changes?<span class="plus"></span></summary>
-        <p class="faq-a">Each kit includes the revision rounds listed on its card. Major redesigns, new concepts, or a full change in business direction may require an additional fee, quoted before any extra work begins.</p>
-      </details>
-      <details>
-        <summary>Are refunds available?<span class="plus"></span></summary>
-        <p class="faq-a">Because each package is custom-built, payments are non-refundable once work begins. If you need to cancel before your Launch Slot starts, you may request to reschedule.</p>
-      </details>
-      <details>
-        <summary>Can you guarantee sales?<span class="plus"></span></summary>
-        <p class="faq-a">No. Start Sharp™ helps you look official, communicate clearly, and launch with stronger materials — but sales and business results are not guaranteed.</p>
-      </details>
-      <details>
-        <summary>Do you offer on-site tag placement for TapSharp?<span class="plus"></span></summary>
-        <p class="faq-a">Yes. On-site placement is $249 and covers placing and testing your tags in person, within 50 miles of Tulsa, OK. Locations beyond that range are quoted separately before any travel is scheduled. Most customers don't need it — tags ship programmed, tested, and ready to stick.</p>
-      </details>
     </div>
   </div>
 </section>
@@ -460,11 +253,9 @@ src="https://www.facebook.com/tr?id=1333983018923267&ev=PageView&noscript=1"/></
     <span class="wordmark"><span class="start">START</span><span class="sharp">SHARP</span><span class="tm">™</span></span>
     <p class="ftag">Look official. Launch faster. Start selling.</p>
     <div class="flinks">
-      <a href="#pricing">Launch Kits</a>
-      <a href="#custom">Custom Sites</a>
-      <a href="#tapsharp">TapSharp</a>
-      <a href="#phoebe">Phoebe</a>
-      <a href="#faq">FAQ</a>
+      <a href="launch-kits/">Launch Kits</a>
+      <a href="tapsharp/">TapSharp</a>
+      <a href="meet-phoebe-demo.html">Phoebe</a>
       <a href="mailto:startsharp@verbumco.com">Reserve a Slot</a>
     </div>
     <p class="legal">Start Sharp™ and TapSharp™ are service marks of Verbum LLC.<br>© 2026 Verbum LLC. All rights reserved.</p>
