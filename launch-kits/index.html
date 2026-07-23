@@ -132,6 +132,56 @@ src="https://www.facebook.com/tr?id=1333983018923267&ev=PageView&noscript=1"/></
   footer .flinks a:hover{color:var(--cream)}
   footer .legal{color:#8c8170;font-size:12.5px;line-height:1.7;max-width:620px;margin:0 auto;border-top:1px solid #2c2620;padding-top:22px}
 
+  /* intake modal */
+  .scrim{position:fixed;inset:0;background:rgba(23,19,16,.72);backdrop-filter:blur(3px);z-index:100;
+    display:none;align-items:flex-start;justify-content:center;padding:28px 18px;overflow-y:auto}
+  .scrim.open{display:flex}
+  body.locked{overflow:hidden}
+  .m-card{background:var(--white);border:1px solid var(--line);border-radius:8px;width:100%;max-width:600px;
+    padding:34px 32px 30px;box-shadow:0 30px 70px -30px rgba(0,0,0,.6);position:relative;margin:auto}
+  @media(max-width:560px){.m-card{padding:28px 20px 24px}}
+  .m-close{position:absolute;top:14px;right:14px;width:34px;height:34px;border:1px solid var(--line);background:var(--cream);
+    border-radius:50%;cursor:pointer;font-size:19px;line-height:1;color:var(--ink-soft);display:grid;place-items:center;transition:.2s}
+  .m-close:hover{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+  .m-eyebrow{font-family:'Archivo',sans-serif;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+    font-size:11px;color:var(--gold-deep);margin-bottom:10px;padding-right:36px}
+  .m-card h3{font-family:'Archivo',sans-serif;font-weight:900;font-size:26px;letter-spacing:-.01em;line-height:1.08;text-transform:none}
+  .m-lede{color:var(--ink-soft);font-size:14.5px;margin-top:8px}
+  .m-card label{display:block;font-family:'Archivo',sans-serif;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;
+    font-weight:700;margin:18px 0 6px}
+  .m-card .req{color:var(--gold-deep)}
+  .m-card input,.m-card select,.m-card textarea{width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:6px;
+    font:inherit;font-size:15px;background:var(--cream);color:var(--ink)}
+  .m-card input:focus,.m-card select:focus,.m-card textarea:focus{outline:none;border-color:var(--gold-deep)}
+  .m-card textarea{resize:vertical;min-height:82px}
+  .m-err{display:none;margin-top:18px;background:#fdf1e3;border:1px solid var(--gold);border-radius:6px;
+    padding:10px 13px;font-size:13.5px;color:var(--gold-deep);font-weight:600}
+  .m-err.show{display:block}
+  .m-submit{width:100%;margin-top:24px;padding:15px;background:var(--ink);color:var(--cream);border:none;border-radius:5px;
+    font-family:'Archivo',sans-serif;font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;cursor:pointer;transition:.2s}
+  .m-submit:hover{background:var(--gold-deep)}
+  .m-submit[disabled]{opacity:.6;cursor:default}
+  .m-fine{text-align:center;font-size:12.5px;color:var(--ink-soft);margin-top:14px;line-height:1.5}
+  .m-step2{text-align:center;padding:8px 0 4px}
+  .m-tick{width:52px;height:52px;border-radius:50%;background:var(--cream-deep);border:1px solid var(--line);
+    display:grid;place-items:center;margin:0 auto 18px}
+  .m-step2 .btn{width:100%;text-align:center;margin-top:22px}
+  .m-step2 .btn-primary{background:var(--gold-deep)}
+  .m-step2 .btn-primary:hover{background:var(--gold);color:var(--ink)}
+  .m-alt{display:inline-block;margin-top:16px;font-size:13px;color:var(--ink-soft);text-decoration:underline;
+    background:none;border:none;cursor:pointer;font-family:inherit}
+  .m-alt:hover{color:var(--ink)}
+  .m-addon{margin-top:22px;background:var(--cream-deep);border:1px solid var(--gold);border-radius:6px;padding:16px 16px 18px}
+  .m-addon .tag{font-family:'Archivo',sans-serif;font-weight:800;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--gold-deep);display:flex;align-items:center;gap:7px}
+  .m-addon label{margin-top:12px}
+  .m-addon .note{font-size:12px;color:var(--ink-soft);margin-top:8px;line-height:1.5}
+  .m-addon .note a{color:var(--gold-deep)}
+
+  /* mode switching */
+  .m-kit,.m-custom{display:none}
+  .m-card[data-mode="kit"] .m-kit,.m-card[data-mode="custom"] .m-custom{display:block}
+
   :focus-visible{outline:3px solid var(--gold);outline-offset:2px}
   @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
@@ -182,7 +232,7 @@ src="https://www.facebook.com/tr?id=1333983018923267&ev=PageView&noscript=1"/></
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8772A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Starter brand direction</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8772A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>1 round of minor revisions</li>
         </ul>
-        <a href="https://buy.stripe.com/14AfZj3Ep2mAcVd1t87N605" target="_blank" rel="noopener" class="btn btn-ghost">Reserve — $99 Deposit</a>
+        <a href="https://buy.stripe.com/14AfZj3Ep2mAcVd1t87N605" target="_blank" rel="noopener" class="btn btn-ghost js-reserve" data-package="Starter Pack — $147">Reserve — $99 Deposit</a>
         <p class="deposit-note">$99 reserves your Launch Slot &amp; is credited toward your total. Balance due at delivery.</p>
       </div>
 
@@ -201,7 +251,7 @@ src="https://www.facebook.com/tr?id=1333983018923267&ev=PageView&noscript=1"/></
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8772A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Launch-ready layout guidance</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8772A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>1 round of minor revisions</li>
         </ul>
-        <a href="https://buy.stripe.com/7sY8wR0sdaT65sLb3I7N606" target="_blank" rel="noopener" class="btn btn-primary">Reserve — $99 Deposit</a>
+        <a href="https://buy.stripe.com/7sY8wR0sdaT65sLb3I7N606" target="_blank" rel="noopener" class="btn btn-primary js-reserve" data-package="Starter Pack Plus — $297">Reserve — $99 Deposit</a>
         <p class="deposit-note">$99 reserves your Launch Slot &amp; is credited toward your total. Balance due at delivery.</p>
       </div>
 
@@ -219,7 +269,7 @@ src="https://www.facebook.com/tr?id=1333983018923267&ev=PageView&noscript=1"/></
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8772A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Priority Launch Slot</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8772A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>2 rounds of minor revisions</li>
         </ul>
-        <a href="https://buy.stripe.com/aFa9AV3Epd1e9J19ZE7N607" target="_blank" rel="noopener" class="btn btn-ghost">Reserve — $99 Deposit</a>
+        <a href="https://buy.stripe.com/aFa9AV3Epd1e9J19ZE7N607" target="_blank" rel="noopener" class="btn btn-ghost js-reserve" data-package="Launch Kit Pro — $497">Reserve — $99 Deposit</a>
         <p class="deposit-note">$99 reserves your Launch Slot &amp; is credited toward your total. Balance due at delivery.</p>
       </div>
     </div>
@@ -238,7 +288,7 @@ src="https://www.facebook.com/tr?id=1333983018923267&ev=PageView&noscript=1"/></
       </div>
       <div class="right">
         <div class="price"><span class="from">Starting at</span><span class="pre">$</span>1,200</div>
-        <a href="mailto:startsharp@verbumco.com?subject=Custom%20Launch%20Site%20Inquiry%20(from%20%241%2C200)" class="btn btn-primary" style="margin-top:14px">Start a Site</a>
+        <a href="mailto:startsharp@verbumco.com?subject=Custom%20Launch%20Site%20Inquiry%20(from%20%241%2C200)" class="btn btn-primary js-custom" style="margin-top:14px">Start a Site</a>
         <p style="margin-top:12px;color:var(--gold);font-size:12px;font-weight:500;letter-spacing:.02em;text-align:center;opacity:.85">We scope it, quote you, then book your slot.</p>
       </div>
     </div>
@@ -305,6 +355,300 @@ src="https://www.facebook.com/tr?id=1333983018923267&ev=PageView&noscript=1"/></
     <p class="legal">Start Sharp™, TapSharp™, and Phoebe™ are service marks of Verbum LLC.<br>© 2026 Verbum LLC. All rights reserved.</p>
   </div>
 </footer>
+
+<!-- ===== INTAKE MODAL ===== -->
+<div class="scrim" id="scrim" role="dialog" aria-modal="true" aria-labelledby="mTitle" hidden>
+  <div class="m-card" id="mCard" data-mode="kit">
+    <button class="m-close" id="mClose" type="button" aria-label="Close">&times;</button>
+
+    <!-- STEP 1: the form -->
+    <div id="mStep1">
+      <div class="m-eyebrow" id="mEyebrow">Project Intake</div>
+      <h3 id="mTitle">Tell us about your launch.</h3>
+      <p class="m-lede" id="mLede">A few quick questions so we can start building. The more detail you give, the sharper your finished work will be.</p>
+
+      <div class="m-kit">
+        <label for="mPackage">Package</label>
+        <input id="mPackage" type="text" readonly>
+      </div>
+
+      <label for="mName">Your name <span class="req">*</span></label>
+      <input id="mName" type="text" placeholder="First and last" autocomplete="name">
+
+      <label for="mEmail">Email <span class="req">*</span></label>
+      <input id="mEmail" type="email" placeholder="you@email.com" autocomplete="email">
+
+      <label for="mPhone">Phone (optional)</label>
+      <input id="mPhone" type="tel" placeholder="(   )   -    " autocomplete="tel">
+
+      <label for="mBiz">Business or project name <span class="req">*</span></label>
+      <input id="mBiz" type="text" placeholder="What are we launching?">
+
+      <label for="mWhat">What does your business do? <span class="req">*</span></label>
+      <textarea id="mWhat" placeholder="A sentence or two — what you sell or offer, and who it's for."></textarea>
+
+      <div class="m-kit">
+        <label for="mBrand">Do you have a name/tagline yet, or need one?</label>
+        <textarea id="mBrand" placeholder="Existing name and any tagline ideas, OR tell us you'd like us to create one."></textarea>
+
+        <label for="mVibe">Colors, vibe, or examples you like (optional)</label>
+        <textarea id="mVibe" placeholder="Any colors, styles, or brands/sites whose look you admire. Links welcome."></textarea>
+
+        <div class="m-addon">
+          <div class="tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A8772A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+            Optional add-on
+          </div>
+          <label for="mTap">Add TapSharp™ tap-to-connect tags?</label>
+          <select id="mTap">
+            <option value="">No thanks</option>
+            <option>Yes — tell me more when you reach out</option>
+            <option>Yes — Starter, $19/mo (1 location · 1 tag)</option>
+            <option>Yes — Standard, $39/mo (1 location · up to 5 tags)</option>
+            <option>Yes — Pro, $79/mo (up to 3 locations · 10 tags)</option>
+            <option>Yes — Multi-location, $199/mo (up to 5 locations · 25 tags)</option>
+          </select>
+          <p class="note">Setup &amp; tag kit — $99 first location, $49 each additional, billed separately from your kit. Nothing is charged today. <a href="/tapsharp/" target="_blank" rel="noopener">See TapSharp plans &rarr;</a></p>
+        </div>
+      </div>
+
+      <div class="m-custom">
+        <label for="mSite">Do you have a website or socials now? (optional)</label>
+        <input id="mSite" type="text" placeholder="Links, or 'nothing yet'">
+
+        <label for="mNeeds">What does the site need to do? <span class="req">*</span></label>
+        <textarea id="mNeeds" placeholder="Pages you have in mind, booking, online ordering, forms, galleries — anything you want it to handle."></textarea>
+
+        <label for="mWhen">Timeline</label>
+        <select id="mWhen">
+          <option value="">Choose one…</option>
+          <option>As soon as possible</option>
+          <option>Within a month</option>
+          <option>1–3 months</option>
+          <option>Just gathering information</option>
+        </select>
+      </div>
+
+      <label for="mNotes">Anything else we should know?</label>
+      <textarea id="mNotes" placeholder="Deadlines, must-haves, questions — anything at all."></textarea>
+
+      <div class="m-err" id="mErr"></div>
+      <button class="m-submit" id="mSubmit" type="button">Send &rarr;</button>
+      <p class="m-fine" id="mFine">Questions? Email <b>startsharp@verbumco.com</b></p>
+    </div>
+
+    <!-- STEP 2: confirmation + payment path -->
+    <div id="mStep2" class="m-step2" hidden>
+      <div class="m-tick">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A8772A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+      </div>
+      <h3 id="mDoneTitle">Got it.</h3>
+      <p class="m-lede" id="mDoneLede"></p>
+      <div id="mPayWrap"></div>
+      <button class="m-alt" id="mDone" type="button">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  /* ---------------------------------------------------------------
+     CONFIG
+     - CUSTOM_DEPOSIT_URL: Stripe payment link for the $600 custom-site
+       deposit. If this is ever blanked out, the custom-site flow
+       degrades to inquiry-only (no payment button is shown).
+     - WEB3FORMS_KEY: optional. Leave empty and forms open the
+       visitor's mail app (same as the rest of the site). Paste an
+       access key from web3forms.com and submissions post straight to
+       your inbox instead — no other change needed.
+  --------------------------------------------------------------- */
+  var CUSTOM_DEPOSIT_URL = 'https://buy.stripe.com/14A4gB1whe5if3lfjY7N608';
+  var WEB3FORMS_KEY      = '';
+  var TO_EMAIL           = 'startsharp@verbumco.com';
+
+  var scrim  = document.getElementById('scrim');
+  var card   = document.getElementById('mCard');
+  var step1  = document.getElementById('mStep1');
+  var step2  = document.getElementById('mStep2');
+  var errBox = document.getElementById('mErr');
+  var submit = document.getElementById('mSubmit');
+  var payUrl = '', lastFocus = null;
+
+  function v(id){ var el = document.getElementById(id); return el ? (el.value||'').trim() : ''; }
+  function mode(){ return card.getAttribute('data-mode'); }
+
+  function open(m, opts){
+    lastFocus = document.activeElement;
+    card.setAttribute('data-mode', m);
+    payUrl = opts.payUrl || '';
+    document.getElementById('mEyebrow').textContent = opts.eyebrow;
+    document.getElementById('mTitle').textContent   = opts.title;
+    document.getElementById('mLede').textContent    = opts.lede;
+    document.getElementById('mSubmit').textContent  = opts.submit;
+    if(m === 'kit'){ document.getElementById('mPackage').value = opts.pkg || ''; }
+    step1.hidden = false; step2.hidden = true;
+    errBox.classList.remove('show');
+    submit.disabled = false;
+    scrim.hidden = false; scrim.classList.add('open');
+    document.body.classList.add('locked');
+    scrim.scrollTop = 0;
+    setTimeout(function(){ document.getElementById('mName').focus(); }, 40);
+  }
+
+  function close(){
+    scrim.classList.remove('open'); scrim.hidden = true;
+    document.body.classList.remove('locked');
+    if(lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  /* ---- open triggers ---- */
+  Array.prototype.forEach.call(document.querySelectorAll('.js-reserve'), function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      open('kit', {
+        eyebrow: 'Project Intake',
+        title:   'Tell us about your launch.',
+        lede:    'A few quick questions before your deposit, so we can start building as soon as your slot opens.',
+        submit:  'Send intake →',
+        pkg:     btn.getAttribute('data-package'),
+        payUrl:  btn.getAttribute('href')
+      });
+    });
+  });
+
+  var customBtn = document.querySelector('.js-custom');
+  if(customBtn){
+    customBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      open('custom', {
+        eyebrow: 'Custom Site Inquiry',
+        title:   'Tell us about your site.',
+        lede:    'Answer a few questions and we’ll come back with scope and a quote. No payment needed to ask.',
+        submit:  'Send inquiry →',
+        payUrl:  CUSTOM_DEPOSIT_URL
+      });
+    });
+  }
+
+  /* ---- close triggers ---- */
+  document.getElementById('mClose').addEventListener('click', close);
+  document.getElementById('mDone').addEventListener('click', close);
+  scrim.addEventListener('click', function(e){ if(e.target === scrim) close(); });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && scrim.classList.contains('open')) close();
+  });
+
+  /* ---- build the message ---- */
+  function fields(){
+    var f = [
+      ['Name', v('mName')],
+      ['Email', v('mEmail')],
+      ['Phone', v('mPhone')],
+      ['Business/Project', v('mBiz')]
+    ];
+    if(mode() === 'kit'){
+      f.push(['Package', v('mPackage')]);
+      f.push(['What the business does', v('mWhat')]);
+      f.push(['Name / tagline status', v('mBrand')]);
+      f.push(['Colors / vibe / examples', v('mVibe')]);
+      f.push(['TapSharp add-on', v('mTap') || 'No']);
+    } else {
+      f.push(['Current site / socials', v('mSite')]);
+      f.push(['What the business does', v('mWhat')]);
+      f.push(['What the site needs to do', v('mNeeds')]);
+      f.push(['Timeline', v('mWhen')]);
+    }
+    f.push(['Anything else', v('mNotes')]);
+    return f;
+  }
+
+  function missing(){
+    var need = [['mName','Your name'],['mEmail','Email'],['mBiz','Business or project name'],['mWhat','What your business does']];
+    if(mode() === 'custom') need.push(['mNeeds','What the site needs to do']);
+    var out = [];
+    need.forEach(function(n){ if(!v(n[0])) out.push(n[1]); });
+    if(v('mEmail') && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('mEmail'))) out.push('a valid email address');
+    return out;
+  }
+
+  function subject(){
+    return mode() === 'kit'
+      ? 'Start Sharp Intake — ' + v('mBiz') + ' (' + v('mPackage') + ')'
+      : 'Custom Launch Site Inquiry — ' + v('mBiz');
+  }
+
+  function showStep2(sent){
+    step1.hidden = true; step2.hidden = false;
+    var wrap = document.getElementById('mPayWrap');
+    var lede = document.getElementById('mDoneLede');
+    wrap.innerHTML = '';
+    document.getElementById('mDoneTitle').textContent = sent ? 'Sent.' : 'One last tap.';
+
+    if(mode() === 'kit'){
+      lede.textContent = sent
+        ? 'We’ve got your intake. Reserve your Launch Slot to lock in your project window.'
+        : 'Your email is drafted — press send in your mail app. Then reserve your Launch Slot below.';
+      wrap.innerHTML = '<a class="btn btn-primary" href="' + payUrl + '" target="_blank" rel="noopener">Continue to $99 Deposit →</a>' +
+        '<p class="m-fine">$99 reserves your Launch Slot &amp; is credited toward your total. Balance due at delivery.</p>';
+    } else {
+      lede.textContent = sent
+        ? 'We’ve got your inquiry and we’ll reply with scope and a quote.'
+        : 'Your email is drafted — press send in your mail app and we’ll reply with scope and a quote.';
+      if(CUSTOM_DEPOSIT_URL){
+        wrap.innerHTML = '<a class="btn btn-primary" href="' + CUSTOM_DEPOSIT_URL + '" target="_blank" rel="noopener">Pay $600 Deposit &amp; Reserve →</a>' +
+          '<p class="m-fine">Already decided? The 50% deposit books your slot now. Otherwise just wait to hear from us — no payment needed.</p>';
+      }
+    }
+    scrim.scrollTop = 0;
+    document.getElementById('mDone').focus();
+  }
+
+  function track(){
+    if(window.fbq){
+      fbq('track','Lead',{content_name: mode()==='kit' ? 'Launch Kit Intake' : 'Custom Site Inquiry',
+                          content_category: mode()==='kit' ? v('mPackage') : 'Custom Launch Site'});
+    }
+  }
+
+  function sendMailto(){
+    var body = fields().map(function(f){ return f[0] + ': ' + (f[1] || '—'); }).join('\n');
+    window.location.href = 'mailto:' + TO_EMAIL +
+      '?subject=' + encodeURIComponent(subject()) +
+      '&body=' + encodeURIComponent(body);
+    showStep2(false);
+  }
+
+  submit.addEventListener('click', function(){
+    var miss = missing();
+    if(miss.length){
+      errBox.textContent = 'Please add ' + miss.join(', ') + '.';
+      errBox.classList.add('show');
+      return;
+    }
+    errBox.classList.remove('show');
+    track();
+
+    if(!WEB3FORMS_KEY){ sendMailto(); return; }
+
+    submit.disabled = true;
+    submit.textContent = 'Sending…';
+    var payload = { access_key: WEB3FORMS_KEY, subject: subject(), from_name: v('mName'), replyto: v('mEmail') };
+    fields().forEach(function(f){ payload[f[0]] = f[1] || '—'; });
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json', 'Accept':'application/json'},
+      body: JSON.stringify(payload)
+    }).then(function(r){ return r.json(); })
+      .then(function(d){
+        if(d && d.success){ showStep2(true); }
+        else { sendMailto(); }
+      })
+      .catch(function(){ sendMailto(); })
+      .finally(function(){ submit.disabled = false; submit.textContent = 'Send →'; });
+  });
+})();
+</script>
 
 </body>
 </html>
